@@ -3,15 +3,15 @@ import pandas as pd
 import requests
 
 
-with open('palm-api-key.txt') as f:
-        palm_api_key = f.read()
+# with open('palm-api-key.txt') as f:
+#         palm_api_key = f.read()
 
 with open('SR-api-key.txt') as f:
         SR_api_key = f.read()
 
-palm.configure(api_key = palm_api_key)
-models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
-model = models[0].name
+# palm.configure(api_key = palm_api_key)
+# models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
+# model = models[0].name
 
 # df = pd.read_excel('Citations.xlsx')
 
@@ -78,10 +78,11 @@ def build_oa_policies_dictionary(journal):
                     formatted_conditions = str(conditions)
 
 
-                compiled_article_version_policy = {article_version: {'oa_fee': oa_fee,
-                                                                    'embargo': formatted_embargo,
-                                                                    'locations': location_list,
-                                                                    'conditions': formatted_conditions}}
+                compiled_article_version_policy = {'article_version': article_version,
+                                                    'oa_fee': oa_fee,
+                                                    'embargo': formatted_embargo,
+                                                    'locations': location_list,
+                                                    'conditions': formatted_conditions}
 
                 list_of_policies.append(compiled_article_version_policy)
 
@@ -100,4 +101,32 @@ target_journal = 'Action Research'
 x = build_oa_policies_dictionary(target_journal)
 cv_review_list.append(x)
 
-print(cv_review_list)
+
+oa_policies = cv_review_list[0]['policies'][0]
+
+paragraphs = []
+for policy in oa_policies:
+    p = f"""\n
+Version: {policy['article_version'].title()}\n
+OA Fee: {policy['oa_fee'].title()}\n
+Embargo: {policy['embargo'].title()}\n
+Locations: {policy['locations']}\n
+Conditions: {policy['conditions']}
+"""
+    paragraphs.append(p)
+
+multiline_message = f"""++++++++++++++++++++++++++++++++++++++++
+Journal: {cv_review_list[0]['journal']} 
+"""
+
+for p in paragraphs:
+    multiline_message += '-'*20 + p + '\n'
+
+print(multiline_message)
+
+file_path = 'output_file.txt'
+
+# Open the file in write mode ('w')
+with open(file_path, 'w') as file:
+    # Write the string to the file
+    file.write(multiline_message)
