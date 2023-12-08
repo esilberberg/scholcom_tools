@@ -1,35 +1,45 @@
 import google.generativeai as palm
 import pandas as pd
 import requests
+from datetime import datetime
 
-
-# with open('palm-api-key.txt') as f:
-#         palm_api_key = f.read()
+with open('palm-api-key.txt') as f:
+        palm_api_key = f.read()
 
 with open('SR-api-key.txt') as f:
         SR_api_key = f.read()
 
-# palm.configure(api_key = palm_api_key)
-# models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
-# model = models[0].name
+palm.configure(api_key = palm_api_key)
+models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
+model = models[0].name
 
-# df = pd.read_excel('Citations.xlsx')
+df = pd.read_excel('Citations.xlsx')
 
-# def get_journal_name(citation):
-#     prompt = f'What is the name of the journal in this citation: {citation}'
+def clean_citation(citation):
+      return citation.strip().replace('\n', '')
 
-#     completion = palm.generate_text(
-#         model=model,
-#         prompt=prompt,
-#         temperature=0,
-#         # The maximum length of the response
-#         max_output_tokens=800,
-#     )
-#     return completion.result
+print('Isolating journal names from citations...')
+def get_journal_name(citation):
+    prompt = f'What is the name of the journal in this citation: {citation}'
 
-# df['Journal Name'] = df['Citation'].apply(get_journal_name)
+    completion = palm.generate_text(
+        model=model,
+        prompt=prompt,
+        temperature=0,
+        # The maximum length of the response
+        max_output_tokens=800,
+    )
+    return completion.result
 
-# print(df)
+df['Citation'] = df['Citation'].apply(clean_citation)
+df['Journal'] = df['Citation'].apply(get_journal_name)
+
+cv_list = []
+for index, row in df.iterrows():
+    data_dict = {'Citation': [], 'Journal': []}
+    data_dict['Citation'].append(row['Citation'])
+    data_dict['Journal'].append(row['Journal'])
+    cv_list.append(data_dict)
 
 def build_oa_policies_dictionary(journal):
     base_url = 'https://v2.sherpa.ac.uk/cgi/retrieve_by_id'
@@ -43,6 +53,7 @@ def build_oa_policies_dictionary(journal):
         data = response.json()
         
         policies = data['items'][0]['publisher_policy']
+        
         range_of_policies = range(len(policies))
         
         policies_dict['journal'] = journal
@@ -95,38 +106,64 @@ def build_oa_policies_dictionary(journal):
                         'policies': 'No information found'}
          
          return(policies_dict)
-            
-cv_review_list = []
-target_journal = 'Action Research'
-x = build_oa_policies_dictionary(target_journal)
-cv_review_list.append(x)
 
 
-oa_policies = cv_review_list[0]['policies'][0]
 
-paragraphs = []
-for policy in oa_policies:
-    p = f"""\n
-Version: {policy['article_version'].title()}\n
-OA Fee: {policy['oa_fee'].title()}\n
+current_date = datetime.now().date()
+formatted_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+output_message = f"""
+Queens College Library Research Services
+= = = = = = = = = = = = = = = = = = = = =
+({formatted_date})
+
+"""
+
+range_of_cv_list = range(len(cv_list))
+
+print('Collection OA policies for each journal...')
+
+for i in range_of_cv_list:
+    list_of_journal_policies = []
+    for j in cv_list[i]['Journal']:
+       list_of_journal_policies.append(build_oa_policies_dictionary(j))
+
+
+    oa_policies = list_of_journal_policies[0]['policies']
+
+    paragraphs = []
+    if oa_policies == 'No information found':
+        p = 'No information found'
+        paragraphs.append(p)
+    else: 
+        for policy in oa_policies[0]:
+            p = f"""
+Version: {policy['article_version'].title()} Manuscript\n
+OA Fee: {policy['oa_fee'].title()}
 Embargo: {policy['embargo'].title()}\n
 Locations: {policy['locations']}\n
 Conditions: {policy['conditions']}
-"""
-    paragraphs.append(p)
+        """
+            paragraphs.append(p)
 
-multiline_message = f"""++++++++++++++++++++++++++++++++++++++++
-Journal: {cv_review_list[0]['journal']} 
-"""
+    per_journal_oa_policies = f"""
+Citation {i+1} + + + + + + + + + + + + + + + + + + + +
 
-for p in paragraphs:
-    multiline_message += '-'*20 + p + '\n'
+{cv_list[i]['Citation'][0]}
 
-print(multiline_message)
+Journal: {list_of_journal_policies[0]['journal']} 
+    """
+    if len(paragraphs) == 1:
+        for p in paragraphs:
+            per_journal_oa_policies += '\n' + p + '\n'
+    else:
+        for p in paragraphs:
+            per_journal_oa_policies += '\n' + p + '\n' + '-'*50
+    
+    output_message += per_journal_oa_policies
 
-file_path = 'output_file.txt'
-
-# Open the file in write mode ('w')
+file_path = 'QCL_CV_OA_Report.txt'
 with open(file_path, 'w') as file:
-    # Write the string to the file
-    file.write(multiline_message)
+    file.write(output_message)
+
+print('QCL_CV_OA_Report.txt has been created.')
