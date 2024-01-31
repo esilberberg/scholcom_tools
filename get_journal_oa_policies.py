@@ -43,10 +43,7 @@ for index, row in df.iterrows():
 
 def build_oa_policies_dictionary(journal):
     base_url = 'https://v2.sherpa.ac.uk/cgi/retrieve_by_id'
-    full_url = base_url + '?item-type=publication&api-key=' + SR_api_key + '&format=Json&identifier=' + str(journal)
-
-    policies_dict = {'journal': '',
-                    'policies': []}
+    full_url = f'{base_url}?item-type=publication&api-key={SR_api_key}&format=Json&identifier={journal}'
 
     try:
         response = requests.get(full_url)
@@ -54,59 +51,43 @@ def build_oa_policies_dictionary(journal):
         
         policies = data['items'][0]['publisher_policy']
         
-        range_of_policies = range(len(policies))
-        
-        policies_dict['journal'] = journal
-        list_of_policies = []
+        policies_dict = {
+            'journal': journal,
+            'policies': []
+        }
 
-        for index in range_of_policies:
+        for policy in policies:
+            list_of_policies = []
 
-            sub_range_policies = range(len(policies[index]['permitted_oa'])) #Some journales have nested policies
-            for sub_range in sub_range_policies:
-                
-                article_version_policy = policies[index]['permitted_oa'][sub_range]
-
+            for article_version_policy in policy.get('permitted_oa', []):
                 article_version = ''.join(article_version_policy['article_version'])
-
                 oa_fee = article_version_policy.get('additional_oa_fee', 'no')
 
                 embargo = article_version_policy.get('embargo', {})
-                if 'amount' in embargo and 'units' in embargo:
-                    formatted_embargo = f"{embargo['amount']} {embargo['units']}"
-                else:
-                    formatted_embargo = 'no'
+                formatted_embargo = f"{embargo.get('amount', 'no')} {embargo.get('units', 'no')}"
 
                 locations = article_version_policy.get('location', {})
-                if 'location' in locations:
-                    location_list = ', '.join(locations['location'])
-                else:
-                    location_list = 'none'
+                location_list = ', '.join(locations.get('location', ['none']))
 
                 conditions = article_version_policy.get('conditions', 'none')
-                if isinstance(conditions, list):
-                    formatted_conditions = ', '.join(map(str, conditions))
-                else:
-                    formatted_conditions = str(conditions)
+                formatted_conditions = ', '.join(map(str, conditions)) if isinstance(conditions, list) else str(conditions)
 
-
-                compiled_article_version_policy = {'article_version': article_version,
-                                                    'oa_fee': oa_fee,
-                                                    'embargo': formatted_embargo,
-                                                    'locations': location_list,
-                                                    'conditions': formatted_conditions}
+                compiled_article_version_policy = {
+                    'article_version': article_version,
+                    'oa_fee': oa_fee,
+                    'embargo': formatted_embargo,
+                    'locations': location_list,
+                    'conditions': formatted_conditions
+                }
 
                 list_of_policies.append(compiled_article_version_policy)
 
-        policies_dict['policies'].append(list_of_policies)
+            policies_dict['policies'].append(list_of_policies)
 
-        return(policies_dict)
+        return policies_dict
     
     except IndexError:
-         policies_dict = {'journal': journal,
-                        'policies': 'No information found'}
-         
-         return(policies_dict)
-
+        return {'journal': journal, 'policies': 'No information found'}
 
 
 current_date = datetime.now().date()
@@ -119,48 +100,40 @@ Queens College Library Research Services
 
 """
 
-range_of_cv_list = range(len(cv_list))
-
 print('Collection OA policies for each journal...')
 
-for i in range_of_cv_list:
-    list_of_journal_policies = []
-    for j in cv_list[i]['Journal']:
-       list_of_journal_policies.append(build_oa_policies_dictionary(j))
+output_message = ""
 
+for i, cv_entry in enumerate(cv_list):
+    list_of_journal_policies = [build_oa_policies_dictionary(j) for j in cv_entry['Journal']]
 
     oa_policies = list_of_journal_policies[0]['policies']
 
     paragraphs = []
     if oa_policies == 'No information found':
-        p = 'No information found'
-        paragraphs.append(p)
-    else: 
+        paragraphs.append('No information found')
+    else:
         for policy in oa_policies[0]:
-            p = f"""
-Version: {policy['article_version'].title()} Manuscript\n
+            paragraphs.append(f"""
+Version: {policy['article_version'].title()} Manuscript
 OA Fee: {policy['oa_fee'].title()}
-Embargo: {policy['embargo'].title()}\n
-Locations: {policy['locations']}\n
+Embargo: {policy['embargo'].title()}
+Locations: {policy['locations']}
 Conditions: {policy['conditions']}
-        """
-            paragraphs.append(p)
-
+""")
+    
     per_journal_oa_policies = f"""
 Citation {i+1} + + + + + + + + + + + + + + + + + + + +
 
-{cv_list[i]['Citation'][0]}
+{cv_entry['Citation'][0]}
 
 Journal: {list_of_journal_policies[0]['journal']} 
-    """
-    if len(paragraphs) == 1:
-        for p in paragraphs:
-            per_journal_oa_policies += '\n' + p + '\n'
-    else:
-        for p in paragraphs:
-            per_journal_oa_policies += '\n' + p + '\n' + '-'*50
+"""
+    
+    per_journal_oa_policies += '\n' + '\n'.join(paragraphs) if len(paragraphs) == 1 else '\n' + '\n'.join(paragraphs) + '\n' + '-'*50
     
     output_message += per_journal_oa_policies
+
 
 file_path = 'QCL_CV_OA_Report.txt'
 with open(file_path, 'w') as file:
