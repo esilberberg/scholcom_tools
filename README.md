@@ -1,7 +1,7 @@
-# Scholcom Tools
-Analytics for scholarly communication outreach
+# Scholcomm Tools
 
-Testing with ACS Chemical Biology, American Educational Research Journal, Journal of Information Literacy
+## get_journal_oa_policies.py
+This script leverages the Google Generative AI (PaLM) and Sherpa/Romeo APIs to automate the extraction of journal names and corresponding open access (OA) policies from a list of citations stored in an Excel file.
 
-Requires excel file to contain one column: "Citation"
+
 Requires API keys for Google PaLM and Sherpa Romeo
