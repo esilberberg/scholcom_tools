@@ -1,7 +1,6 @@
 # Scholcomm Tools
+## For Open Access Publishing in Education
 
-## get_journal_oa_policies.py
-This script uses Google's PaLM LLM and Sherpa/Romeo APIs to automate the extraction of journal names and corresponding open access (OA) policies from a list of citations stored in an Excel file. It then produces a report of OA policies per citation.
+This project uses Google's PaLM LLM and Sherpa/Romeo APIs to automate the extraction of journal names and corresponding open access (OA) policies from a list of citations in an Excel file. By producing a report of OA policies per citation, the project hopes to empower researchers to make their work OA.
 
-
-Requires API keys for Google PaLM and Sherpa Romeo
+Requires API keys for Google PaLM and Sherpa Romeo.
