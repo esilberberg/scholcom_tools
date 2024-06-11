@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 from datetime import datetime
 
-with open('palm-api-key.txt') as f:
+with open('googleAiStudio-api-key.txt') as f:
         palm_api_key = f.read()
 
 with open('SR-api-key.txt') as f:
