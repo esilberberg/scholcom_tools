@@ -1,38 +1,26 @@
-import google.generativeai as palm
+import google.generativeai as genai
 import pandas as pd
 import requests
 from datetime import datetime
 
 with open('googleAiStudio-api-key.txt') as f:
-        palm_api_key = f.read()
+    genai_api_key = f.read()
+
+genai.configure(api_key=genai_api_key)
+model = genai.GenerativeModel('gemini-1.5-flash')
+
+citations_spreadsheet = 'citations-examples.xlsx'
+df = pd.read_excel(citations_spreadsheet)
+
+print('Extracting journal names from citations...')
+def get_journal_name(citation):
+    response = model.generate_content(f"What is the journal name in this academic citation: {citation}? Do not say 'The journal name is' in your response. If a journal name is abbreviated, return the full journal name.")
+    return response.text.strip()
+
+df['Journal'] = df['Citation'].apply(get_journal_name)
 
 with open('SR-api-key.txt') as f:
         SR_api_key = f.read()
-
-palm.configure(api_key = palm_api_key)
-models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
-model = models[0].name
-
-df = pd.read_excel('Citations.xlsx')
-
-def clean_citation(citation):
-      return citation.strip().replace('\n', '')
-
-print('Isolating journal names from citations...')
-def get_journal_name(citation):
-    prompt = f'What is the name of the journal in this citation: {citation}'
-
-    completion = palm.generate_text(
-        model=model,
-        prompt=prompt,
-        temperature=0,
-        # The maximum length of the response
-        max_output_tokens=800,
-    )
-    return completion.result
-
-df['Citation'] = df['Citation'].apply(clean_citation)
-df['Journal'] = df['Citation'].apply(get_journal_name)
 
 cv_list = []
 for index, row in df.iterrows():
@@ -41,10 +29,9 @@ for index, row in df.iterrows():
     data_dict['Journal'].append(row['Journal'])
     cv_list.append(data_dict)
 
-def build_oa_policies_dictionary(journal):
+def get_oa_policies(journal):
     base_url = 'https://v2.sherpa.ac.uk/cgi/retrieve_by_id'
     full_url = f'{base_url}?item-type=publication&api-key={SR_api_key}&format=Json&identifier={journal}'
-
     try:
         response = requests.get(full_url)
         data = response.json()
@@ -87,7 +74,7 @@ def build_oa_policies_dictionary(journal):
         return policies_dict
     
     except IndexError:
-        return {'journal': journal, 'policies': 'No information found'}
+        return {'journal': journal, 'policies': 'No information found \n'}
 
 
 current_date = datetime.now().date()
@@ -102,10 +89,8 @@ Queens College Library Research Services
 
 print('Collection OA policies for each journal...')
 
-output_message = ""
-
 for i, cv_entry in enumerate(cv_list):
-    list_of_journal_policies = [build_oa_policies_dictionary(j) for j in cv_entry['Journal']]
+    list_of_journal_policies = [get_oa_policies(j) for j in cv_entry['Journal']]
 
     oa_policies = list_of_journal_policies[0]['policies']
 
@@ -123,17 +108,18 @@ Conditions: {policy['conditions']}
 """)
     
     per_journal_oa_policies = f"""
-Citation {i+1} + + + + + + + + + + + + + + + + + + + +
++ + + + + + + + + + Citation {i+1} + + + + + + + + + +
 
 {cv_entry['Citation'][0]}
 
 Journal: {list_of_journal_policies[0]['journal']} 
 """
     
-    per_journal_oa_policies += '\n' + '\n'.join(paragraphs) if len(paragraphs) == 1 else '\n' + '\n'.join(paragraphs) + '\n' + '-'*50
+    per_journal_oa_policies += '\n' + '\n'.join(paragraphs) if len(paragraphs) == 1 else '\n' + '\n'.join(paragraphs) + '\n'
     
     output_message += per_journal_oa_policies
 
+print(output_message)
 
 file_path = 'QCL_CV_OA_Report.txt'
 with open(file_path, 'w') as file:
