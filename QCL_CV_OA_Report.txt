@@ -1,116 +1,321 @@
 
 Queens College Library Research Services
 = = = = = = = = = = = = = = = = = = = = =
-(2024-06-21 09:24:06)
+
 
 
 + + + + + + + + + + Citation 1 + + + + + + + + + +
 
-Máñez, I., Lipnevich, A.A., Lopera-Oquendo, C. et al. Examining pre-service teachers’ feedback on low- and high-quality written assignments. Educ Asse Eval Acc 36, 225–256 (2024). https://doi.org/10.1007/s11092-024-09432-x
+Alvarez, S. P., Kuchirko, Y., McBeth, M., Tarafdar, M., Watson, M., (Eds.) 2022. Literacy and Learning in Times of Crisis: Emergent Teaching Through Emergencies. New York: Peter Lang.
 
-Journal: Educational Assessment, Evaluation and Accountability 
+Journal: There is no journal name in the provided citation.  It is a book. 
 
-
-Version: Submitted Manuscript
-OA Fee: No
-Embargo: No No
-Locations: authors_homepage, preprint_repository
-Conditions: Published source must be acknowledged, Must link to publisher version with DOI
-
-
-Version: Accepted Manuscript
-OA Fee: No
-Embargo: No No
-Locations: authors_homepage
-Conditions: Published source must be acknowledged with citation, Must link to publisher version with DOI, Post-prints are subject to Springer Nature re-use terms, Set statement to accompany deposit (see policy)
-
-
-Version: Accepted Manuscript
-OA Fee: No
-Embargo: 12 Months
-Locations: funder_designated_location, institutional_repository
-Conditions: Published source must be acknowledged with citation, Must link to publisher version with DOI, Post-prints are subject to Springer Nature re-use terms, Set statement to accompany deposit (see policy)
-
-
+No information found
 + + + + + + + + + + Citation 2 + + + + + + + + + +
 
-Roda, A., & Menken, K. (2024). The Conflation of Dual Language Bilingual Education With Gifted Programs in New York City Schools. Educational Policy, 0(0). https://doi.org/10.1177/08959048241237724
+Anderst, L. 2021 Mellon/ACLS Community College Faculty Fellowships. English, Queensborough
 
-Journal: Educational Policy 
+Journal: There is no journal name in the provided citation.  It appears to be a fellowship or grant mention. 
 
-
-Version: Submitted Manuscript
-OA Fee: No
-Embargo: No No
-Locations: any_repository, any_website
-Conditions: Reuse is restricted to non-commercial and no derivative uses
-
-
-Version: Accepted Manuscript
-OA Fee: No
-Embargo: No No
-Locations: authors_homepage, institutional_repository, institutional_website, named_repository, non_commercial_social_network, non_commercial_subject_repository
-Conditions: Published source must be acknowledged with citation, Upon publication, must link to publisher version with DOI, Must include statement that accepted for publication, Reuse is restricted to non-commercial and no derivative uses
-
-
+No information found
 + + + + + + + + + + Citation 3 + + + + + + + + + +
 
-Pai, G. (2024). Using Formative Assessment and Feedback from Student Response Systems (SRS) to Revise Statistics Instruction and Promote Student Growth for All. Journal of Statistics and Data Science Education, 1–10. https://doi.org/10.1080/26939169.2024.2321241
+Community
 
-Journal: Journal of Statistics and Data Science Education 
+Journal: Community 
 
-
-Version: Published Manuscript
-OA Fee: No
-Embargo: No No
-Locations: any_website, named_repository, this_journal
-Conditions: Recommended to link to publisher version, Publisher copyright and source must be acknowledged with citation, Article will be automatically deposited in subject-based repositories
-
-
-Version: Published Manuscript
-OA Fee: No
-Embargo: No No
-Locations: any_website, this_journal
-Conditions: Recommended to link to publisher version, Publisher copyright and source must be acknowledged with citation, Article will be automatically deposited in subject-based repositories
-
-
+No information found
 + + + + + + + + + + Citation 4 + + + + + + + + + +
 
-Olvera, A. G., Vonk, J. M. J., Brickman, A. M., Byrd, D., & Renteria, M. A. (2023). 6 Code-switching, Language Attitudes, and Executive Function in Latinx Bilinguals. Journal of the International Neuropsychological Society, 29(s1), 90–91. doi:10.1017/S1355617723001807
+Apkarian, J. 2024. A Dynamic Model of Professional Legitimacy: Linking Professional Logics and Jurisdictional Threats in the Corporate Credit Rating Industry. Journal of Professions and Organization, 11(1), 61-82. a runner up for the JPO Best Paper Prize for 2023-24.
 
-Journal: Journal of the International Neuropsychological Society 
+Journal: Journal of Professions and Organization 
 
 
 Version: Submitted Manuscript
 OA Fee: No
 Embargo: No No
 Locations: any_website
-Conditions: Must state accepted for publication (if applicable), Should link to publisher version or journal website, Copyright must be acknowledged, Published source must be acknowledged with citation
-
-+ + + + + + + + + + Citation 5 + + + + + + + + + +
-
-Cooper, P. M., & Casey, E. M. (2023). Preparing democratic early childhood teachers in Don’t Say Gay times: how course readings fall short. Journal of Early Childhood Teacher Education, 44(4), 1093–1121. https://doi.org/10.1080/10901027.2023.2262742
-
-Journal: Journal of Early Childhood Teacher Education 
-
-
-Version: Submitted Manuscript
-OA Fee: No
-Embargo: No No
-Locations: authors_homepage, named_repository, preprint_repository
-Conditions: Upon publication, published source must be acknowledged, Upon publication, must link to publisher version, Set statements to accompany deposits (see policy), The publisher will deposit in on behalf of authors to a designated institutional repository, where a deposit agreement exists with the repository
+Conditions: Prior to acceptance, Must be accompanied by a set statement (see policy), After publication, must link to published article with DOI
 
 
 Version: Accepted Manuscript
 OA Fee: No
-Embargo: 18 Months
-Locations: academic_social_network, institutional_repository, named_academic_social_network, named_repository, subject_repository
-Conditions: Published source must be acknowledged, Must link to publisher version, Set statements to accompany deposits (see policy), The publisher will deposit in on behalf of authors to a designated institutional repository, where a deposit agreement exists with the repository
+Embargo: 24 Months
+Locations: institutional_repository, non_commercial_subject_repository
+Conditions: Published source must be acknowledged, Must link to published article with DOI, Set phrase to accompany archived copy (see policy)
 
 
 Version: Accepted Manuscript
 OA Fee: No
 Embargo: No No
 Locations: authors_homepage
-Conditions: Published source must be acknowledged with citation, Must link to published article, Set statements to accompany deposits (see policy)
+Conditions: Published source must be acknowledged, Must link to published article with DOI, Set phrase to accompany archived copy (see policy)
 
+
+Version: Published Manuscript
+OA Fee: Yes
+Embargo: No No
+Locations: named_repository, non_commercial_website, this_journal
+Conditions: Published source must be acknowledged with citation, Must link to published version with DOI
+
+
+Version: Published Manuscript
+OA Fee: Yes
+Embargo: No No
+Locations: any_website, named_repository, this_journal
+Conditions: Published source must be acknowledged with citation, Must link to published version with DOI
+
+
++ + + + + + + + + + Citation 5 + + + + + + + + + +
+
+Banerjee, R. 2023. Review of The Bad Side of Books: Selected Essays by D. H. Lawrence for Modernism/modernity Print Plus. https://modernismmodernity.org/forums/posts/banerjee-bad-side-books-essays-lawrence.
+
+Journal: Modernism/modernity Print Plus 
+
+No information found
++ + + + + + + + + + Citation 6 + + + + + + + + + +
+
+Banerjee, R. 2023. Bengalis and English: Conversations during a Movie Screening, essay for The Hoosac Institute Journal 13. https://hoosacinstitute.com/Ria-Banerjee.
+
+Journal: Hoosac Institute Journal 
+
+No information found
++ + + + + + + + + + Citation 7 + + + + + + + + + +
+
+Banerjee, R. 2022. Fashions and Wars: Negotiations of Liberal Humanism in E. M. Forster’s Writings, 1915-1925, for ELN: English Language Notes Special Issue Fashion’s Borders 60(2): 69-91.
+
+Journal: English Language Notes 
+
+
+Version: Submittedaccepted Manuscript
+OA Fee: No
+Embargo: No No
+Locations: authors_homepage, institutional_website, non_commercial_institutional_repository, non_commercial_repository
+Conditions: Upon publication, publisher copyright and source must be acknowledged, Upon publication, must link to publisher version as soon as publisher version is available
+
+
+Version: Accepted Manuscript
+OA Fee: No
+Embargo: 12 Months
+Locations: named_repository
+Conditions: Publisher copyright and source must be acknowledged, Must link to publisher version as soon as publisher version is available
+
+
+Version: Accepted Manuscript
+OA Fee: No
+Embargo: No No
+Locations: any_website
+Conditions: Published source must be acknowledged with citation, Must link to published article
+
+
++ + + + + + + + + + Citation 8 + + + + + + + + + +
+
+Banerjee, R. 2022. Troubling Modernism at Community College during the Sixth Extinction” in “Reading Modernism in the Sixth Extinction, Modernism/modernity Print Plus, October 7. https://doi.org/10.26597/mod.0233.
+
+Journal: Modernism/modernity Print Plus 
+
+No information found
++ + + + + + + + + + Citation 9 + + + + + + + + + +
+
+Banerjee, R. 2020. National Endowment of the Humanities (NEH) Summer Stipend 2020 for book manuscript Drafty Houses (July-August).
+
+Journal: There is no journal name in the provided citation.  This appears to be a grant or fellowship acknowledgement. 
+
+No information found
++ + + + + + + + + + Citation 10 + + + + + + + + + +
+
+Banerjee, R. 2019-2020. Modern Languages Association (MLA) Humanities Innovation Course Development Grant for “Colonialism Today: The Legacy of Colonialism and New York City’s Migrant Populations.”
+
+Journal: There is no journal name in the provided citation.  This appears to be a grant award, not a publication in a journal. 
+
+No information found
++ + + + + + + + + + Citation 11 + + + + + + + + + +
+
+Banerjee, R. 2019. Three Instances of Shell Shock: Soldiers and the Interwar Era in the Dorset Novels of Mary Butts in Transatlantic Shell Shock. Ed. Austin Riede. U of North Georgia Press, 232-259.
+
+Journal: There is no journal name in the provided citation.  It is a chapter in a book. 
+
+No information found
++ + + + + + + + + + Citation 12 + + + + + + + + + +
+
+Banerjee, R. 2019. “Time” in “The Waste Land and the #metoo Generation,” Modernism/modernity Print Plus, March 7. https://doi.org/10.26597/mod.0100.
+
+Journal: Modernism/modernity Print Plus 
+
+No information found
++ + + + + + + + + + Citation 13 + + + + + + + + + +
+
+Banerjee, R. From Humiliation to Epiphany: The Role of Onstage Spaces in T. S. Eliot’s Middle Plays” in South Atlantic Review 82.2 (Summer 2017): 59-77. https://www.jstor.org/stable/90013645.
+
+Journal: South Atlantic Review 
+
+No information found
++ + + + + + + + + + Citation 14 + + + + + + + + + +
+
+Bayoumi, M. 2023.The Vanishing of the Public Intellectual. The Markaz Review, October. https://themarkaz.org/the-vanishing-of-the-public-intellectual/
+
+Journal: The Markaz Review 
+
+No information found
++ + + + + + + + + + Citation 15 + + + + + + + + + +
+
+Bayoumi, M. 2023.Cambodia Is Teaching the World How to Clear Land Mines. The Nation. https://www.thenation.com/article/world/cambodia-land-mine-clearance/
+
+Journal: The Nation 
+
+No information found
++ + + + + + + + + + Citation 16 + + + + + + + + + +
+
+Bayoumi, M. became regular columnist of The Guardian in 2023. https://www.theguardian.com/guardian-us-press-office/2023/nov/09/guardian-us-announces-moustafa-bayoumi-as-new-regular-columnist
+
+Journal: The provided link is to a news article on The Guardian's website, not an academic journal.  There is no journal name. 
+
+No information found
++ + + + + + + + + + Citation 17 + + + + + + + + + +
+
+Behrent, M. 2022. A Way of Knowing: Adrienne Rich’s Marxism & the Poetics of Revolution,” Arizona Quarterly 78(2):13-42.
+
+Journal: Arizona Quarterly 
+
+No information found
++ + + + + + + + + + Citation 18 + + + + + + + + + +
+
+Behrent, M. 2020-21. National Endowment of the Humanities Award for Faculty at HSIs for book project, Poetry & Politics: Audre Lorde, Adrienne Rich & the Women’s Liberation Movement..
+
+Journal: There is no journal name in the provided citation.  It describes a grant or award. 
+
+No information found
++ + + + + + + + + + Citation 19 + + + + + + + + + +
+
+Behrent, M. 2019. The Personal is Historical: Slavery, Black Power and Resistance in Octavia Butler’s Kindred.” College Literature 46,(4):795-828.
+
+Journal: College Literature 
+
+No information found
++ + + + + + + + + + Citation 20 + + + + + + + + + +
+
+Behrent, M. 2019. “Editor’s Introduction” & “An Interview with Nancy Armstrong,” NANO: New American Notes Online 14, Special Issue on Captivity Narratives Then & Now: Gender, Race and the Captive in 20th and 21st Century American Literature and Culture (September 2019).
+
+Journal: NANO: New American Notes Online 
+
+No information found
++ + + + + + + + + + Citation 21 + + + + + + + + + +
+
+Behrent, M. 2019. Suburban Captivity Narratives: Domesticity, Feminism and the liberation of the American Housewife.” JNT: Journal of Narrative Theory 49(2):247-286.
+
+Journal: Journal of Narrative Theory 
+
+No information found
++ + + + + + + + + + Citation 22 + + + + + + + + + +
+
+Behrent, M. 2017.“From A Woman’s Right to Choose to ‘A Woman’s Right to Shoes’: The Commodification of Feminism and the Politics of Choice from Fear of Flying to Bridget Jones’ Diary, Assuming Gender 6 (1):31-60.
+
+Journal: Assuming Gender 
+
+No information found
++ + + + + + + + + + Citation 23 + + + + + + + + + +
+
+Better, A. 2021. Queering the Introduction to Sociology Course. Teaching Sociology 49(3): 291-298.
+
+Journal: Teaching Sociology 
+
+
+Version: Submitted Manuscript
+OA Fee: No
+Embargo: No No
+Locations: any_repository, any_website
+Conditions: Reuse is restricted to non-commercial and no derivative uses, Upon publication, must link to publisher version with DOI, Must include statement that accepted for publication
+
+
+Version: Accepted Manuscript
+OA Fee: No
+Embargo: No No
+Locations: any_repository, any_website, named_repository
+Conditions: Published source must be acknowledged with citation, Upon publication, must link to publisher version with DOI, Must include statement that accepted for publication, Reuse is restricted to non-commercial and no derivative uses
+
+
++ + + + + + + + + + Citation 24 + + + + + + + + + +
+
+Better, A. 2018. Review of Vibrator Nation: How Feminist Sex-Toy Stores Changed the Business of Pleasure by Lynn Comella, American Journal of Sociology 124(3): 938-940.
+
+Journal: American Journal of Sociology 
+
+
+Version: Submittedaccepted Manuscript
+OA Fee: No
+Embargo: No No
+Locations: non_commercial_repository, preprint_repository
+Conditions: Prior to acceptance of article, Must include statement regarding submission to journal, May replace with accepted version
+
+
+Version: Acceptedpublished Manuscript
+OA Fee: No
+Embargo: 12 Months
+Locations: non_commercial_institutional_repository, non_commercial_subject_repository
+Conditions: Publisher source must be acknowledged with citation, Must be acknowledged with set statement, Must link to published article with DOI
+
+
+Version: Published Manuscript
+OA Fee: Yes
+Embargo: No No
+Locations: non_commercial_website, this_journal
+Conditions: Published source should be acknowledged with citation
+
+
+Version: Accepted Manuscript
+OA Fee: No
+Embargo: No No
+Locations: any_website
+Conditions: Publisher source must be acknowledged with citation
+
+
+Version: Accepted Manuscript
+OA Fee: No
+Embargo: 12 Months
+Locations: any_website, named_repository
+Conditions: Publisher copyright and source must be acknowledged with set statement, Encouraged to link to publisher version, Non-commercial use only
+
+
+Version: Accepted Manuscript
+OA Fee: No
+Embargo: No No
+Locations: non_commercial_institutional_repository, non_commercial_repository, non_commercial_subject_repository
+Conditions: Publisher source must be acknowledged with citation
+
+
+Version: Published Manuscript
+OA Fee: Yes
+Embargo: No No
+Locations: any_website, this_journal
+Conditions: Published source should be acknowledged with citation
+
+
++ + + + + + + + + + Citation 25 + + + + + + + + + +
+
+Bishop, S. 2019. Undocumented Storytellers: Narrating the Immigrant Rights Movement. New York: Oxford University Press.
+
+Journal: There is no journal name in the provided citation.  This is a book. 
+
+No information found
++ + + + + + + + + + Citation 26 + + + + + + + + + +
+
+Winner of the Best Book Award, American Studies Division, National Communication Association
+
+Journal: There is no journal name in the provided citation.  The citation refers to a book award. 
+
+No information found
++ + + + + + + + + + Citation 27 + + + + + + + + + +
+
+Bishop, S. 2017. Model Citizens: The Making of an American Throughout the Naturalization Process.”
+
+Journal: There is no journal name provided in the citation. 
+
+No information found
++ + + + + + + + + + Citation 28 + + + + + + + + + +
+
+Communication, Culture & Critique, 10(3):479-498.
+
+Journal: Communication, Culture & Critique 
+
+No information found

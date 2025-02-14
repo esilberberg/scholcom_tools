@@ -1,6 +1,7 @@
 import google.generativeai as genai
 import pandas as pd
 import requests
+import time
 from datetime import datetime
 
 with open('googleAiStudio-api-key.txt') as f:
@@ -9,12 +10,15 @@ with open('googleAiStudio-api-key.txt') as f:
 genai.configure(api_key=genai_api_key)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
-citations_spreadsheet = 'citations-examples.xlsx'
+citations_spreadsheet = 'abc.xlsx'
 df = pd.read_excel(citations_spreadsheet)
 
 print('Extracting journal names from citations...')
 def get_journal_name(citation):
+    """Isolates the journal name of citation using Gemini LLM."""
+    time.sleep(4)
     response = model.generate_content(f"What is the journal name in this academic citation: {citation}? Do not say 'The journal name is' in your response. If a journal name is abbreviated, return the full journal name.")
+    print(response.text)
     return response.text.strip()
 
 df['Journal'] = df['Citation'].apply(get_journal_name)
@@ -30,6 +34,8 @@ for index, row in df.iterrows():
     cv_list.append(data_dict)
 
 def get_oa_policies(journal):
+    """Retrieves OA policies per article version from JISC Open Policy Finder API."""
+    print(journal)
     base_url = 'https://v2.sherpa.ac.uk/cgi/retrieve_by_id'
     full_url = f'{base_url}?item-type=publication&api-key={SR_api_key}&format=Json&identifier={journal}'
     try:
@@ -95,7 +101,7 @@ for i, cv_entry in enumerate(cv_list):
     oa_policies = list_of_journal_policies[0]['policies']
 
     paragraphs = []
-    if oa_policies == 'No information found':
+    if oa_policies in ('No information found', 'No information found \n'):
         paragraphs.append('No information found')
     else:
         for policy in oa_policies[0]:
